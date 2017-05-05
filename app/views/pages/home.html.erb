@@ -1,26 +1,38 @@
-<div class="jumbotron jumbotron-home">
+ <% if user_signed_in? %>
+ <div class="jumbotron jumbotron-home">
+        <div class="container">
+    <h1> Welcome Back. Let's Start Learning</h1>
+        </div>
+ </div>              
+<% else %>   
+    <div class="jumbotron jumbotron-home">
+        <div class="container">
+           
+            
+            
+            <h1>Welcome to Mind Meditate Academy!</h1>
+            <p>We design learning experiences and share the teaching in transformational education for student around the world </p>
+            <%= link_to "Learn more »", learnmore_path, class: "btn btn-primary btn-lg" %> 
+          
+        </div>
+    </div>
     <div class="container">
-        <h1>Welcome to my website!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <%= link_to "Learn more »", "#", class: "btn btn-primary btn-lg" %> 
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><%= link_to "View details", "#", class: "btn btn-secondary" %></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><%= link_to "View details", "#", class: "btn btn-secondary" %></p>
-        </div>
-        <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><%= link_to "View details", "#", class: "btn btn-secondary" %></p>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Online Courses</h2>
+                <p>We are offering courses that can help to elevate yourself in every aspect of life. We affiliate with the expert in each of the subjects. You will enjoy monthly free courses or win attractive prizes  </p>
+                <p><%= link_to "View details", courses_path, class: "btn btn-secondary" %></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Seminars</h2>
+                <p>Come join us live in every happening places around the world and start to learn to hack your believe systems. Live your dream </p>
+                <p><%= link_to "View details", seminars_path, class: "btn btn-secondary" %></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Membership</h2>
+                <p>Signing Up to our membership will provide many benefits such as discounts to attend our seminars, purchase our product and also enable you to collect points to earn attractive prizes from our affiliates </p>
+                <p><%= link_to "View details", membership_path, class: "btn btn-secondary" %></p>
+            </div>
         </div>
     </div>
-</div>
+<% end %>   
